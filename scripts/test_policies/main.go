@@ -106,7 +106,7 @@ func TestPolicy(path string) error {
 
 	params := make(map[string]interface{})
 	for _, param := range policyMetadata.Spec.Parameters{
-		params[param["name"].(string)] = param["default"] 
+		params[param["name"].(string)] = param["value"] 
     }
 
 	for i := range testCases {
