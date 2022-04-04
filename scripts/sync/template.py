@@ -61,10 +61,10 @@ class TemplateSyncer:
         for template in templates:
             if template.get("targets"):
                 targets_schema = {
-                    "kind": [],
-                    "cluster": [],
-                    "namespace": [],
-                    "label": {},
+                    "kinds": [],
+                    "clusters": [],
+                    "namespaces": [],
+                    "labels": {},
                 }
                 targets_schema.update(template["targets"])
                 template["targets"] = targets_schema

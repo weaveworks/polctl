@@ -60,10 +60,10 @@ class PolicySyncer:
 
         for policy in policies:
             targets_schema = {
-                "kind": [],
-                "cluster": [],
-                "namespace": [],
-                "label": {},
+                "kinds": [],
+                "clusters": [],
+                "namespaces": [],
+                "labels": {},
             }
             targets_schema.update(policy["targets"])
             policy["targets"] = targets_schema
