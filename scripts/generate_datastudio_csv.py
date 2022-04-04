@@ -28,7 +28,7 @@ def generate_datastudio_csv(policies_dir, csv_path):
 
                     # entites
                     entities = ""
-                    for entity in spec["targets"]["kind"]:
+                    for entity in spec["targets"]["kinds"]:
                         entities += entity + ","
                     data_record += f"'{entities[:-1]}',"
 
