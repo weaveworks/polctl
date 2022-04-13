@@ -36,7 +36,8 @@ class StandardSyncer:
         self._client.create_standard(
             id=standard["id"],
             name=standard["name"],
-            description=standard["description"]
+            description=standard["description"],
+            enabled=standard.get("enabled", True),
         )
         for control in standard.get("controls", []):
             self._create_new_control(standard["id"], control)
@@ -52,13 +53,14 @@ class StandardSyncer:
         )
 
     def _update_standard(self, standard: dict, remote_standard: dict):
-        for field in ["id", "name", "description"]:
+        for field in ["id", "name", "description", "enabled"]:
             if str(standard.get(field)).strip() != str(remote_standard.get(field)).strip():
                 click.secho(f"Updating standard {standard['id']}", fg="yellow")
                 self._client.update_standard(
                     id=standard["id"],
                     name=standard["name"],
                     description=standard["description"],
+                    enabled=standard.get("enabled", True),
                 )
                 break
 

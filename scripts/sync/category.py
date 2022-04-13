@@ -30,15 +30,17 @@ class CategorySyncer:
         self._client.create_category(
             id=category["id"],
             name=category["name"],
+            enabled=category.get("enabled", True),
         )
     
     def _update_category(self, category: dict, remote_category: dict):
-        for field in ["id", "name"]:
+        for field in ["id", "name", "enabled"]:
             if str(category[field]).strip() != str(remote_category[field]).strip():
                 click.secho(f"Updating category {category['id']}", fg="yellow")
                 self._client.update_category(
                     id=category['id'],
                     name=category["name"],
+                    enabled=category.get("enabled", True),
                 )
                 break
   
