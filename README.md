@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-# polctl
-policy-library management scripts
-=======
-# MGLXCTL
+# POLCTL
 
-Magalix Policy management scripts.
+Weaveworks SaaS Policy management scripts.
 
 ## Scripts
 
@@ -14,7 +10,7 @@ Magalix Policy management scripts.
 Usage: sync.py [OPTIONS] COMMAND [ARGS]...
 
   Sync script that syncs policies, templates, standards, controls and
-  categories to Magalix policies service
+  categories to Weaveworks SaaS policies service
 
 Options:
   --help  Show this message and exit.
